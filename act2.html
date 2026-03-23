@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate Input</title>
+   
+     <style>
+
+      .valid {
+        background-color: green;
+        padding: 1rem;
+        color: white;
+      }
+
+      .invalid{
+        background-color: red;
+        padding: 1rem;
+        color: white;
+      }
+
+     </style> 
+
+</head>
+<body>
+    <h1>Check Input Validity</h1>
+    <input type="number" name="" id="inputNumber" min="100" max="300" required>
+    <button onclick="checkInput()">Submit</button>
+    
+    <p id="demo"></p>
+
+    <script>
+        function checkInput() {
+            var inputObj = document.getElementById('inputNumber');
+            
+            if(!inputObj.checkValidity()) {
+                document.getElementById('demo').innerHTML = inputObj.validationMessage;
+                document.getElementById('demo').classList.add("invalid");
+            }
+            else{
+                document.getElementById('demo').innerHTML = "Input is valid";
+                document.getElementById('demo').classList.add("valid");
+            }
+        }
+    </script>
+
+
+</body>
+</html>
