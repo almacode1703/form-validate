@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="" name="myForm" onsubmit="return validateForm(event)">
+        <div>
+           <label for="">Name</label> <br>
+           <input type="text" name="name" id="name">
+           <input type="submit" value="Submit">
+        </div>
+    </form>
+
+    <p id="demo"></p>
+
+    <script>
+       function validateForm(e) {
+        e.preventDefault();
+        
+        var name = document.forms["myForm"]["name"].value;
+        if (name == "") {
+          alert("Name must be filled out");
+          return;
+        }
+        document.getElementById("demo").innerHTML = name;
+        return false;
+       }
+    </script>
+
+</body>
+</html>
